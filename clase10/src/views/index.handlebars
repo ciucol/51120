@@ -1,0 +1,18 @@
+
+<h1>Hola {{user.name}}</h1>
+<p>Tu eres {{user.role}}</p>
+
+<br>
+<br>
+<br>
+
+{{#if role}}
+
+  {{#each usersInfo}}
+    <h2>Hola {{this.name}}</h2>
+
+    <p>Bienvenido a este sitio!!!</p>
+    <p>Eres estudiante de {{this.course}}, sigue aprendiendo</p>
+  {{/each}}
+
+{{/if}}
