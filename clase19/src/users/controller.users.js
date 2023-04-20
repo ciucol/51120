@@ -1,5 +1,6 @@
 const { Router } = require('express')
 const Users = require('../models/Users.model')
+const { hashPassword } = require('../utils/cryptPassword')
 
 const router = Router()
 
@@ -11,7 +12,7 @@ router.post('/', async (req, res) => {
       last_name,
       email,
       age,
-      password,
+      password: hashPassword(password),
     }
 
     const user = await Users.create(newUserInfo)
@@ -19,6 +20,9 @@ router.post('/', async (req, res) => {
     res.status(201).json({ status: 'success', message: user })
   } catch (error) {
     console.log(error.message)
+    if (error.code === 11000) {
+      return res.status(400).json({ status: 'error', error: 'User existed' })
+    }
     res.status(500).json({ status: 'error', error: 'Internal server error' })
   }
 })

@@ -1,5 +1,6 @@
 const { Router } = require('express')
 const Users = require('../models/Users.model')
+const { isValidPassword, hashPassword } = require('../utils/cryptPassword')
 
 const router = Router()
 
@@ -10,15 +11,15 @@ router.post('/', async (req, res) => {
     const user = await Users.findOne({ email })
     console.log(user)
     if (!user)
-      return res.status(400).json({
+      return res.status(401).json({
         status: 'error',
-        error: 'El usuario y la contraseña no coincide',
+        error: 'El usuario y la contraseña no coinciden',
       })
 
-    if (user.password !== password)
-      return res.status(400).json({
+    if (!isValidPassword(password, user))
+      return res.status(401).json({
         status: 'error',
-        error: 'El usuario y la contraseña no coincide',
+        error: 'El usuario y la contraseña no coinciden',
       })
 
     req.session.user = {
@@ -39,6 +40,18 @@ router.get('/logout', (req, res) => {
     if (error) return res.json({ error })
     res.redirect('/login')
   })
+})
+
+router.patch('/forgotPassword', async (req, res) => {
+  try {
+    const { email, password } = req.body
+    const passwordEncrypted = hashPassword(password)
+    await Users.updateOne({ email }, { password: passwordEncrypted })
+
+    res.json({ message: 'Password updated' })
+  } catch (error) {
+    res.json({ error: error.message })
+  }
 })
 
 module.exports = router

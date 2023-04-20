@@ -17,4 +17,12 @@ router.get('/login', publicAccess, (req, res) => {
   res.render('login.handlebars')
 })
 
+router.get('/notAuthorized', publicAccess, (req, res) => {
+  res.render('notAuthorized.handlebars')
+})
+
+router.get('/forgotPassword', (req, res) => {
+  res.render('forgotPassword.handlebars')
+})
+
 module.exports = router
