@@ -2,12 +2,15 @@ const { Router } = require('express')
 const Users = require('../models/Users.model')
 const { generateToken, authToken } = require('../utils/jwt.utils')
 const passport = require('passport')
+const passportCall = require('../utils/passportCall.util')
+const authorization = require('../middlewares/authorization.middleware')
 
 const router = Router()
 
 router.get(
   '/',
-  passport.authenticate('jwt', { session: false }),
+  passportCall('jwt'),
+  authorization('admin'),
   async (req, res) => {
     try {
       const users = await Users.find()

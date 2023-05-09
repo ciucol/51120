@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
         .status(400)
         .json({ status: 'error', error: "User and password don't match" })
 
-    const access_token = generateToken({ email })
+    const access_token = generateToken({ email, role: user.role })
 
     // res.status(200).json({
     //   status: 'success',

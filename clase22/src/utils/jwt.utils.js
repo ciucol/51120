@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const PRIVATE_KEY = 'coderSecret'
 
 const generateToken = user => {
-  const token = jwt.sign({ user }, PRIVATE_KEY, { expiresIn: '30s' })
+  const token = jwt.sign(user, PRIVATE_KEY, { expiresIn: '60s' })
 
   return token
 }
