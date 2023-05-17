@@ -44,6 +44,21 @@ router.get(
   }
 )
 
+router.get(
+  '/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] }),
+  async (req, res) => {}
+)
+
+router.get(
+  '/google/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  async (req, res) => {
+    req.session.user = req.user
+    res.redirect('/')
+  }
+)
+
 router.get('/logout', (req, res) => {
   req.session.destroy(error => {
     if (error) return res.json({ error })

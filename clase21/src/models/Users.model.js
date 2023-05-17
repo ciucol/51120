@@ -11,6 +11,7 @@ const collectionSchema = new mongoose.Schema({
   },
   age: Number,
   password: String,
+  googleId: String,
 })
 
 const Users = mongoose.model(collectionName, collectionSchema)
