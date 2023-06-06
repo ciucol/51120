@@ -1,0 +1,21 @@
+{
+  "name": "clase30",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:beta": " NODE_ENV=beta nodemon src/app.js",
+    "start:prod": " NODE_ENV=production nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.2",
+    "nodemailer": "^6.9.3",
+    "twilio": "^4.11.2"
+  }
+}
