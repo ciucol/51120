@@ -1,7 +1,5 @@
-const winston = require('winston')
+import winston from 'winston'
 
-const logger = winston.createLogger({
+export const logger = winston.createLogger({
   transports: [new winston.transports.Console({ level: 'verbose' })],
 })
-
-module.exports = logger

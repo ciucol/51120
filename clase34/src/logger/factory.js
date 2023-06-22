@@ -1,13 +1,20 @@
-const { environment } = require('../config/app.config.js')
+import { appConfig } from '../config/app.config.js'
 
-switch (environment) {
-  case 'development':
-    console.log('dev')
-    module.exports = require('./dev.logger.js')
-    break
+async function getLogger() {
+  let response
+  switch (appConfig.environment) {
+    case 'development':
+      console.log('dev')
+      response = await import('./dev.logger.js')
+      break
 
-  case 'production':
-    console.log('prod')
-    module.exports = require('./prod.logger.js')
-    break
+    case 'production':
+      console.log('prod')
+      response = await import('./prod.logger.js')
+      break
+  }
+
+  return response
 }
+
+export default getLogger

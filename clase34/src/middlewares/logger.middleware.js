@@ -1,6 +1,7 @@
-const logger = require('../logger/factory')
+import getLogger from '../logger/factory.js'
 
-const addLogger = async (req, res, next) => {
+export const addLogger = async (req, res, next) => {
+  const { logger } = await getLogger()
   req.logger = logger
   req.logger.info(
     `${req.method} en ${req.url} - ${new Date().toLocaleTimeString()}`
@@ -8,5 +9,3 @@ const addLogger = async (req, res, next) => {
 
   next()
 }
-
-module.exports = addLogger

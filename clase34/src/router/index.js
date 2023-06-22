@@ -1,7 +1,7 @@
-const usersController = require('../controllers/users.controller')
+import usersController from '../controllers/users.controller.js'
 
 const router = app => {
   app.use('/users', usersController)
 }
 
-module.exports = router
+export default router

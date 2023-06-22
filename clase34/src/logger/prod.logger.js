@@ -1,7 +1,7 @@
-const winston = require('winston')
-const customLevelOptions = require('../utils/loggerCustomLevelOptions')
+import winston from 'winston'
+import { customLevelOptions } from '../utils/loggerCustomLevelOptions.js'
 
-const logger = winston.createLogger({
+export const logger = winston.createLogger({
   levels: customLevelOptions.levels,
   transports: [
     new winston.transports.Console({
@@ -13,10 +13,8 @@ const logger = winston.createLogger({
     }),
     new winston.transports.File({
       filename: './logs/warnings.log',
-      level: 'advertencia',
+      level: 'warning',
       format: winston.format.simple(),
     }),
   ],
 })
-
-module.exports = logger

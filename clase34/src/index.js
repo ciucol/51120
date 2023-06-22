@@ -1,6 +1,6 @@
-const express = require('express')
-const addLogger = require('./middlewares/logger.middleware')
-const router = require('./router')
+import express from 'express'
+import router from './router/index.js'
+import { addLogger } from './middlewares/logger.middleware.js'
 
 const app = express()
 
