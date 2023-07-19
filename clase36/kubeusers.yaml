@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeservice
+spec:
+  selector:
+    app: kubeusers
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubedeploy
+spec:
+  replicas: 1500
+  selector:
+    matchLabels:
+      app: kubeusers
+  template:
+    metadata:
+      labels:
+        app: kubeusers
+    spec:
+      containers:
+      - name: kubecontainer
+        image: ciucom/51120image:1.0.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+        env:
+          - name: MONGO_URL
+            value: mongodb+srv://admin:admin@coderbackend.0pp623p.mongodb.net/?retryWrites=true&w=majority
+        imagePullPolicy: Always

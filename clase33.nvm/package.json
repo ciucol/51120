@@ -1,0 +1,26 @@
+{
+  "name": "clase33.nvm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "saludar": "echo \"hola a todos\" > saludar.txt"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "mongoose": "^7.3.0",
+    "winston": "^3.9.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "colors": "^1.4.0",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
+  }
+}

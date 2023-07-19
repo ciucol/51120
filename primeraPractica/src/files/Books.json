@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "description": "La historia de la familia Buendía a lo largo de varias generaciones en el pueblo ficticio de Macondo.",
+    "year": 1967,
+    "images": "cien_anios_de_soledad.jpg"
+  },
+  {
+    "title": "Don Quijote de la Mancha",
+    "author": "Miguel de Cervantes Saavedra",
+    "description": "La historia de un hidalgo llamado Alonso Quijano que enloquece y decide convertirse en caballero andante.",
+    "year": 1605,
+    "images": "don_quijote_de_la_mancha.jpg"
+  },
+  {
+    "title": "La sombra del viento",
+    "author": "Carlos Ruiz Zafón",
+    "description": "Un joven llamado Daniel Sempere descubre un libro que lo lleva a una búsqueda de la verdad sobre la vida del autor.",
+    "year": 2001,
+    "images": "la_sombra_del_viento.jpg"
+  },
+  {
+    "title": "Ficciones",
+    "author": "Jorge Luis Borges",
+    "description": "Una colección de cuentos que exploran temas como el infinito, los laberintos y los espejos.",
+    "year": 1944,
+    "images": "ficciones.jpg"
+  },
+  {
+    "title": "Pedro Páramo",
+    "author": "Juan Rulfo",
+    "description": "Un hombre llamado Juan Preciado visita el pueblo de Comala en busca de su padre, Pedro Páramo.",
+    "year": 1955,
+    "images": "pedro_paramo.jpg"
+  },
+  {
+    "title": "Crónica de una muerte anunciada",
+    "author": "Gabriel García Márquez",
+    "description": "La historia del asesinato de Santiago Nasar, anunciado previamente, y cómo la comunidad no logra detenerlo.",
+    "year": 1981,
+    "images": "cronica_de_una_muerte_anunciada.jpg"
+  },
+  {
+    "title": "Rayuela",
+    "author": "Julio Cortázar",
+    "description": "Una novela experimental que puede ser leída en diferentes órdenes y sigue la vida de Horacio Oliveira.",
+    "year": 1963,
+    "images": "rayuela.jpg"
+  },
+  {
+    "title": "La casa de los espíritus",
+    "author": "Isabel Allende",
+    "description": "Una saga familiar que abarca tres generaciones de la familia Trueba en un país sudamericano no especificado.",
+    "year": 1982,
+    "images": "la_casa_de_los_espiritus.jpg"
+  },
+  {
+    "title": "Los detectives salvajes",
+    "author": "Roberto Bolaño",
+    "description": "Dos jóvenes poetas latinoamericanos emprenden una búsqueda para encontrar a la misteriosa escritora Cesárea Tinajero.",
+    "year": 1998,
+    "images": "los_detectives_salvajes.jpg"
+  }
+]

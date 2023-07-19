@@ -1,0 +1,21 @@
+{
+  "name": "clase25",
+  "version": "1.0.0",
+  "main": "process.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:local": "NODE_ENV=local nodemon src/index.js",
+    "start:dev": "NODE_ENV=development nodemon src/index.js",
+    "start:prod": "NODE_ENV=production nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "commander": "^10.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
